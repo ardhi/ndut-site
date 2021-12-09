@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "name": {
+      "type": "String",
+      "length": 100,
+      "required": true
+    },
+    "hostname": {
+      "type": "String",
+      "length": 255,
+      "required": true
+    },
+    "status": {
+      "type": "String",
+      "length": 10,
+      "required": true
+    }
+  },
+  "feature": {
+    "createdAt": true,
+    "updatedAt": true,
+    "deletedAt": true
+  }
+}
