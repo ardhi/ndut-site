@@ -9,16 +9,12 @@
       "type": "String",
       "length": 255,
       "required": true
-    },
-    "status": {
-      "type": "String",
-      "length": 10,
-      "required": true
     }
   },
   "feature": {
     "createdAt": true,
     "updatedAt": true,
-    "deletedAt": true
+    "deletedAt": true,
+    "status": true
   }
 }
