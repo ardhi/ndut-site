@@ -1,7 +1,7 @@
 module.exports = {
   schema: {
     description: 'Get record by its ID',
-    tags: ['DB'],
+    tags: ['Site'],
     params: {
       type: 'object',
       properties: {
@@ -17,8 +17,8 @@ module.exports = {
     }
   },
   handler: async function (request, reply) {
-    const model = this.ndutDb.helper.getModelByAlias(request.params.model)
-    const data = await this.ndutDb.findById(model, request, request.params.id)
+    const model = this.ndutDb.helper.getModelByAlias(request.params.model, true)
+    const data = await model.findById(request.params.id)
     if (!data) throw new this.Boom.Boom('Record not found', { statusCode: 404 })
     return {
       data

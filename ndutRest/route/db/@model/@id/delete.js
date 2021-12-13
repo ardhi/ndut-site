@@ -1,7 +1,7 @@
 module.exports = {
   schema: {
     description: 'Remove record by its ID',
-    tags: ['DB'],
+    tags: ['Site'],
     params: {
       type: 'object',
       properties: {
@@ -17,10 +17,11 @@ module.exports = {
     }
   },
   handler: async function (request, reply) {
-    const model = this.ndutDb.helper.getModelByAlias(request.params.model)
-    const existing = await this.ndutDb.findById(model, request, request.params.id)
+    const model = this.ndutDb.helper.getModelByAlias(request.params.model, true)
+    const id = request.params.id
+    const existing = await model.findById(id)
     if (!existing) throw new this.Boom.Boom('Record not found', { statusCode: 404 })
-    await this.ndutDb.remove(model, request, { id: request.params.id })
+    await model.remove({ id })
     return {
       data: existing,
       message: 'Record successfully removed'
