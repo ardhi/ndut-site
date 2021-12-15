@@ -23,7 +23,5 @@
     "url": "https://github.com/ardhi/ndut-site/issues"
   },
   "homepage": "https://github.com/ardhi/ndut-site#readme",
-  "dependencies": {
-    "fastify-plugin": "^3.0.0"
-  }
+  "dependencies": {}
 }
