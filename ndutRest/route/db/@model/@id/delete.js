@@ -17,10 +17,13 @@ module.exports = {
     }
   },
   handler: async function (request, reply) {
+    const { getSchemaByAlias } = this.ndutDb.helper
+    const schema = getSchemaByAlias(request.params.model)
+    if (!schema.expose.remove) throw this.Boom.notFound('Resource not found')
     const model = this.ndutDb.helper.getModelByAlias(request.params.model, true)
     const id = request.params.id
     const existing = await model.findById(id)
-    if (!existing) throw new this.Boom.Boom('Record not found', { statusCode: 404 })
+    if (!existing) throw this.Boom.notFound('Record not found')
     await model.remove({ id })
     return {
       data: existing,
