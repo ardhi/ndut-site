@@ -1,0 +1,4 @@
+{
+  "name": "ndut-site",
+  "dependency": ["ndut-db"]
+}
