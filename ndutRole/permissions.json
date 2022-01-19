@@ -1,42 +1,14 @@
 [
   {
     "type": "rest",
-    "subject": "/db/:model",
-    "action": "read",
+    "subject": [
+      "/db/:model",
+      "/db/:model/:id"
+    ],
+    "access": "siteadmin",
+    "action": ["read", "create", "update", "remove"],
     "conditions": {
-      "access": { "$in": ["siteadmin"] }
-    }
-  },
-  {
-    "type": "rest",
-    "subject": "/db/:model/:id",
-    "action": "read",
-    "conditions": {
-      "access": { "$in": ["siteadmin"] }
-    }
-  },
-  {
-    "type": "rest",
-    "subject": "/db/:model",
-    "action": "create",
-    "conditions": {
-      "access": { "$in": ["siteadmin"] }
-    }
-  },
-  {
-    "type": "rest",
-    "subject": "/db/:model/:id",
-    "action": "update",
-    "conditions": {
-      "access": { "$in": ["siteadmin"] }
-    }
-  },
-  {
-    "type": "rest",
-    "subject": "/db/:model/:id",
-    "action": "remove",
-    "conditions": {
-      "access": { "$in": ["siteadmin"] }
+      "model": { "$nin": ["site-info"] }
     }
   }
 ]
