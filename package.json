@@ -1,6 +1,6 @@
 {
   "name": "ndut-site",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Ndut Site Management for Ndut Framework",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
