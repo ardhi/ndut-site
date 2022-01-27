@@ -1,10 +1,5 @@
-module.exports = async function (model, request, ...args) {
-  const site = await this.ndutSite.helper.isSiteSupportedModel(model)
-  args[0] = args[0] || {}
-  const where = args[0].where || {}
-  if (site && request.site) where.siteId = request.site.id
-  args[0].where = where
-  // findOne() doesn't support options, so pushed in query/filter
-  if (request.site) args[0].siteId = request.site.id
-  return args
+module.exports = async function ({ model, params = {}, filter = {} }) {
+  const supported = await this.ndutSite.helper.isSiteSupportedModel(model)
+  params.where = params.where || {}
+  if (supported && (filter.site || {}).id) params.where.siteId = filter.site.id
 }
