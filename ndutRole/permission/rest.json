@@ -1,0 +1,13 @@
+[
+  {
+    "path": [
+      "/db/:model",
+      "/db/:model/:id"
+    ],
+    "access": "siteadmin",
+    "method": ["read", "create", "update", "remove"],
+    "metaFilter": {
+      "model": { "nin": ["site-info"] }
+    }
+  }
+]
