@@ -1,10 +1,10 @@
 module.exports = {
   properties: {
     siteId: {
-      type: Number,
+      type: String,
+      length: 20,
       required: false,
-      default: 0,
-      scale: 0
+      index: true
     }
   }
 }

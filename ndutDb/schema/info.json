@@ -15,10 +15,5 @@
       "default": {}
     }
   },
-  "feature": {
-    "createdAt": true,
-    "updatedAt": true,
-    "deletedAt": true,
-    "status": true
-  }
+  "feature": ["createdAt", "updatedAt", "deletedAt", "status"]
 }
