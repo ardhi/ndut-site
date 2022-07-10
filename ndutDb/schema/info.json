@@ -1,19 +1,34 @@
 {
   "properties": {
-    "name": {
-      "type": "String",
-      "length": 100,
-      "required": true
-    },
     "hostname": {
       "type": "String",
       "length": 255,
-      "required": true
+      "required": true,
+      "index": true
+    },
+    "name": {
+      "type": "String",
+      "length": 50,
+      "required": true,
+      "index": true
+    },
+    "logo": {
+      "type": "String",
+      "length": 255
+    },
+    "orgName": {
+      "type": "String",
+      "length": 50,
+      "index": true
+    },
+    "orgLogo": {
+      "type": "String",
+      "length": 255
     },
     "pref": {
       "type": "json",
       "default": {}
     }
   },
-  "feature": ["createdAt", "updatedAt", "deletedAt", "status"]
+  "feature": ["ndutExtraPersonInCharge", "ndutExtraAddress", "createdAt", "updatedAt", "deletedAt", "status"]
 }

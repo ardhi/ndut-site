@@ -1,5 +1,10 @@
 [
   {
+    "path": "/profile",
+    "method": ["update"],
+    "access": "admin"
+  },
+  {
     "path": [
       "/db/:model",
       "/db/:model/:id"

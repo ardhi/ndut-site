@@ -1,4 +1,5 @@
 {
   "/db/:model": ["GET", "POST"],
-  "/db/:model/:id": ["GET", "PUT", "DELETE"]
+  "/db/:model/:id": ["GET", "PUT", "DELETE"],
+  "/profile": ["PUT"]
 }
